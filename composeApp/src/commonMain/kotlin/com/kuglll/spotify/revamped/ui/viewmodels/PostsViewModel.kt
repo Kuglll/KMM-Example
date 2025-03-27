@@ -6,6 +6,7 @@ import com.kuglll.spotify.revamped.data.api.PostService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class PostsViewModel(
@@ -20,12 +21,12 @@ class PostsViewModel(
 
     private fun fetchPosts() {
         viewModelScope.launch {
-            _state.value = PostsState.Loading
+            _state.update { PostsState.Loading }
             try {
                 val posts = postService.getAllPosts()
-                _state.value = PostsState.Success(posts = posts)
+                _state.update { PostsState.Success(posts = posts) }
             } catch (e: Exception) {
-                _state.value = PostsState.Error(message = e.message ?: "Unknown error occurred")
+                _state.update { PostsState.Error(message = e.message ?: "Unknown error occurred") }
             }
         }
     }
