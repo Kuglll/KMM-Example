@@ -8,54 +8,43 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.kuglll.spotify.revamped.data.api.PostServiceImpl
-import com.kuglll.spotify.revamped.data.model.Post
 import com.kuglll.spotify.revamped.ui.components.PostItem
+import com.kuglll.spotify.revamped.ui.viewmodels.PostsState
+import com.kuglll.spotify.revamped.ui.viewmodels.PostsViewModel
 
 @Composable
 fun PostsScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: PostsViewModel = viewModel { PostsViewModel(PostServiceImpl()) },
 ) {
-    var posts by remember { mutableStateOf<List<Post>>(emptyList()) }
-    var isLoading by remember { mutableStateOf(false) }
-    var error by remember { mutableStateOf<String?>(null) }
-    
-    val postService = remember { PostServiceImpl() }
 
-    LaunchedEffect(Unit) {
-        isLoading = true
-        try {
-            posts = postService.getAllPosts()
-        } catch (e: Exception) {
-            error = e.message
-        } finally {
-            isLoading = false
-        }
-    }
+    val state by viewModel.state.collectAsState()
 
     Box(modifier = modifier.fillMaxSize()) {
-        when {
-            isLoading -> {
+        when (state) {
+            is PostsState.Loading -> {
                 CircularProgressIndicator(
-                    modifier = Modifier.align(Alignment.Center)
+                    modifier = Modifier.align(Alignment.Center),
                 )
             }
-            error != null -> {
+            is PostsState.Error -> {
                 Text(
-                    text = "Error: $error",
+                    text = "Error: ${(state as PostsState.Error).message}",
                     color = MaterialTheme.colorScheme.error,
                     modifier = Modifier
                         .align(Alignment.Center)
-                        .padding(16.dp)
+                        .padding(16.dp),
                 )
             }
-            else -> {
+            is PostsState.Success -> {
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
-                    items(posts) { post ->
+                    items((state as PostsState.Success).posts) { post ->
                         PostItem(post = post)
                     }
                 }
