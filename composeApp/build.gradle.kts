@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    kotlin("plugin.serialization") version "2.1.10"
 }
 
 kotlin {
@@ -33,6 +34,17 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.ktor.client.android)
+            
+            // Android Compose dependencies
+            implementation(platform("androidx.compose:compose-bom:2024.02.00"))
+            implementation("androidx.compose.ui:ui")
+            implementation("androidx.compose.ui:ui-graphics")
+            implementation("androidx.compose.ui:ui-tooling-preview")
+            implementation("androidx.compose.material3:material3")
+            implementation("androidx.compose.foundation:foundation")
+            implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+            implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -43,6 +55,18 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
+            
+            // Ktor dependencies
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            
+            // Kotlinx Serialization
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+        }
+        
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
