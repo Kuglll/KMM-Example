@@ -13,7 +13,9 @@ import com.kuglll.spotify.revamped.data.model.Post
 import com.kuglll.spotify.revamped.ui.components.PostItem
 
 @Composable
-fun PostsScreen() {
+fun PostsScreen(
+    modifier: Modifier = Modifier
+) {
     var posts by remember { mutableStateOf<List<Post>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }
     var error by remember { mutableStateOf<String?>(null) }
@@ -31,7 +33,7 @@ fun PostsScreen() {
         }
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = modifier.fillMaxSize()) {
         when {
             isLoading -> {
                 CircularProgressIndicator(
