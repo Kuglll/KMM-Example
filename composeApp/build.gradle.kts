@@ -56,6 +56,10 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             
+            // Koin dependencies
+            implementation("io.insert-koin:koin-core:3.5.3")
+            implementation("io.insert-koin:koin-compose:1.1.2")
+            
             // Ktor dependencies
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)

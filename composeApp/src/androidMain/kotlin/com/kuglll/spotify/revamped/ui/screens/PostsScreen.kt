@@ -8,18 +8,16 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.kuglll.spotify.revamped.data.api.PostServiceImpl
 import com.kuglll.spotify.revamped.ui.components.PostItem
 import com.kuglll.spotify.revamped.ui.viewmodels.PostsState
 import com.kuglll.spotify.revamped.ui.viewmodels.PostsViewModel
+import org.koin.compose.koinInject
 
 @Composable
 fun PostsScreen(
     modifier: Modifier = Modifier,
-    viewModel: PostsViewModel = viewModel { PostsViewModel(PostServiceImpl()) },
 ) {
-
+    val viewModel: PostsViewModel = koinInject()
     val state by viewModel.state.collectAsState()
 
     Box(modifier = modifier.fillMaxSize()) {
