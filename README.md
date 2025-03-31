@@ -1,14 +1,19 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+## KMP Example
+
+This is a Kotlin Multiplatform project Example.
+
+In this example we'll try to simulate we have 2 existing apps: iOS and Android. 
+
+Our plan is to:
+- Extract shared logic from android app into a KMP module.
+- Add the KMP module to the iOS app, that is in other repo.
+
+## Project structure
 
 * `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
   It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
-
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
-
+  - `androidMain` includes android specific code + android app
+  - `commonMain` is for code that’s going to be shared between android and ios.
+  - `iosMain` includes ios specific code. iOS app is in a separate repo.
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
