@@ -11,7 +11,7 @@ Our plan is to:
 
 ## Project structure
 
-* `/shared` contains the project's code. It contains several subfolders:
+* `/shared` contains the project's code. It has several subfolders:
   - `androidMain` includes android specific code + android app (android app could also be a part of another repo)
   - `commonMain` is for code that’s going to be shared between android and ios.
   - `iosMain` includes ios specific code. iOS app is in a separate repo.
