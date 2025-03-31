@@ -30,7 +30,6 @@ kotlin {
     }
     
     sourceSets {
-        
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
@@ -68,7 +67,6 @@ kotlin {
             // Kotlinx Serialization
             implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
         }
-        
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
         }
