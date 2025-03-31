@@ -76,11 +76,11 @@ kotlin {
 }
 
 android {
-    namespace = "com.kuglll.spotify.revamped"
+    namespace = "com.kuglll.kmm.example"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.kuglll.spotify.revamped"
+        applicationId = "com.kuglll.kmm.example"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1

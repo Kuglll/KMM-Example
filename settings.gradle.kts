@@ -1,4 +1,4 @@
-rootProject.name = "Spotify-revamped"
+rootProject.name = "KMM-Example"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

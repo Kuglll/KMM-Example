@@ -1,4 +1,4 @@
-package com.kuglll.spotify.revamped.data.api
+package com.kuglll.kmm.example.data.api
 
 import io.ktor.client.*
 import io.ktor.client.plugins.contentnegotiation.*

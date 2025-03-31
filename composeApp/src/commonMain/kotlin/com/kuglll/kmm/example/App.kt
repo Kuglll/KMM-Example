@@ -1,4 +1,4 @@
-package com.kuglll.spotify.revamped
+package com.kuglll.kmm.example
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -10,11 +10,10 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import kmm_example.composeapp.generated.resources.Res
+import kmm_example.composeapp.generated.resources.compose_multiplatform
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-
-import spotify_revamped.composeapp.generated.resources.Res
-import spotify_revamped.composeapp.generated.resources.compose_multiplatform
 
 @Composable
 @Preview

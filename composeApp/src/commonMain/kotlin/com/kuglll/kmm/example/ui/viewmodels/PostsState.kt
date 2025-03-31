@@ -1,6 +1,6 @@
-package com.kuglll.spotify.revamped.ui.viewmodels
+package com.kuglll.kmm.example.ui.viewmodels
 
-import com.kuglll.spotify.revamped.data.model.Post
+import com.kuglll.kmm.example.data.model.Post
 
 sealed class PostsState {
     data object Loading : PostsState()

@@ -1,4 +1,4 @@
-package com.kuglll.spotify.revamped.ui.screens
+package com.kuglll.kmm.example.ui.screens
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -8,9 +8,9 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.kuglll.spotify.revamped.ui.components.PostItem
-import com.kuglll.spotify.revamped.ui.viewmodels.PostsState
-import com.kuglll.spotify.revamped.ui.viewmodels.PostsViewModel
+import com.kuglll.kmm.example.ui.components.PostItem
+import com.kuglll.kmm.example.ui.viewmodels.PostsState
+import com.kuglll.kmm.example.ui.viewmodels.PostsViewModel
 import org.koin.compose.koinInject
 
 @Composable

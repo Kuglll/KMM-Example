@@ -1,4 +1,4 @@
-package com.kuglll.spotify.revamped
+package com.kuglll.kmm.example
 
 interface Platform {
     val name: String

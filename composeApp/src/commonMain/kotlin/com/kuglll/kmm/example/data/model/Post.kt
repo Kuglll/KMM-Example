@@ -1,4 +1,4 @@
-package com.kuglll.spotify.revamped.data.model
+package com.kuglll.kmm.example.data.model
 
 import kotlinx.serialization.Serializable
 

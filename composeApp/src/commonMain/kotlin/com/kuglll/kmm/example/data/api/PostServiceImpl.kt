@@ -1,6 +1,6 @@
-package com.kuglll.spotify.revamped.data.api
+package com.kuglll.kmm.example.data.api
 
-import com.kuglll.spotify.revamped.data.model.Post
+import com.kuglll.kmm.example.data.model.Post
 import io.ktor.client.call.*
 import io.ktor.client.request.*
 

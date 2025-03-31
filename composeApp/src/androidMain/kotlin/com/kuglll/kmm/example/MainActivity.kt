@@ -1,4 +1,4 @@
-package com.kuglll.spotify.revamped
+package com.kuglll.kmm.example
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,8 +9,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.kuglll.spotify.revamped.di.appModule
-import com.kuglll.spotify.revamped.ui.screens.PostsScreen
+import com.kuglll.kmm.example.di.appModule
+import com.kuglll.kmm.example.ui.screens.PostsScreen
 import org.koin.compose.KoinApplication
 
 class MainActivity : ComponentActivity() {
